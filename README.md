@@ -33,14 +33,51 @@ This project is designed according to the SOLID principles:
 1. **Single Responsibility Principle (SRP)**: Each class is responsible for a single part of the program's functionality. For example:
    - `Addition`, `Subtraction`, etc., handle specific operations.
    - `BasicCalculator`, `ScientificCalculator`, and `FinancialCalculator` handle different types of calculations.
+     ```python
+     class Addition(Operation):
+     def calculate(self, a: float, b: float) -> float:
+        return a + b
+
 
 2. **Open/Closed Principle (OCP)**: The calculator is open for extension but closed for modification. New operations can be added by extending the `Operation` abstract class.
+     ```python
+     class Modulus(Operation):
+     def calculate(self, a: float, b: float) -> float:
+        return a % b
 
 3. **Liskov Substitution Principle (LSP)**: Any subclass of `Calculator` can replace the parent class without affecting the functionality.
+     ```python
+     basic_calc.set_operation(Modulus())
+     basic_result = basic_calc.execute(10, 3)
 
 4. **Interface Segregation Principle (ISP)**: Interfaces (abstract classes) are small and specific, e.g., `Operation` and `Logger`.
+     ```python
+     class Operation(ABC):
+     @abstractmethod
+     def calculate(self, a: float, b: float) -> float:
+         pass
+
+     class Logger(ABC):
+     @abstractmethod
+     def log(self, message: str) -> None:
+         pass
 
 5. **Dependency Inversion Principle (DIP)**: High-level modules like `Calculator` depend on abstractions (`Operation`, `Logger`), not concrete implementations.
+     ```python
+     class Calculator(ABC):
+     def __init__(self, logger):
+         self._operation = None
+         self._logger = logger
+     
+     class BasicCalculator(Calculator):
+     def execute(self, a: float, b: float = 0) -> float:
+         if self._operation is None:
+             raise ValueError("No operation set. Please set an operation before calculating.")
+         result = self._operation.calculate(a, b)
+         if result.is_integer():
+             result = int(result)
+         self._logger.log(f"Executed {self._operation.__class__.__name__} on {a} and {b}: Result = {result}")
+         return result
 
 ## Class Structure
 
