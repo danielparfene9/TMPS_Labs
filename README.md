@@ -1,5 +1,13 @@
 # SOLID Calculator Project
 
+## Author: Parfene Daniel
+
+----
+
+## Objectives:
+
+* Implement 2 Principles of SOLID.
+
 ## Overview
 This project implements a flexible and extendable calculator following the **SOLID principles** of software design. The calculator supports:
 
@@ -53,11 +61,6 @@ This project is designed according to the SOLID principles:
     ```bash
     cd calculator
     ```
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 ## Usage
 
 ```python
@@ -72,16 +75,16 @@ logger = ConsoleLogger()
 basic_calc = BasicCalculator(logger)
 basic_calc.set_operation(Addition())
 result = basic_calc.execute(5, 3)
-print(f"Basic Result: {result}")  # Output: Basic Result: 8
+print(f"Basic Result: {result}")
 
 # Scientific Calculator Usage
 scientific_calc = ScientificCalculator(logger)
 scientific_calc.set_operation(Sine())
 result = scientific_calc.execute(pi / 2)
-print(f"Scientific Result: {result}")  # Output: Scientific Result: 1/1
+print(f"Scientific Result: {result}")
 
 # Financial Calculator Usage
 financial_calc = FinancialCalculator(logger)
 financial_calc.set_operation(CompoundInterest())
 result = financial_calc.execute(1000, 0.05, 10)
-print(f"Financial Result: {result}")  # Output: Financial Result: 1628.894626777442
+print(f"Financial Result: {result}")
