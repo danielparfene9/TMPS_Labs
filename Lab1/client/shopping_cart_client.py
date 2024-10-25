@@ -6,8 +6,8 @@ class ShoppingCartClient:
     def __init__(self):
         self.cart = ShoppingCart()
 
-    def add_product(self, name, price, description=None):
-        product = ProductBuilder().set_name(name).set_price(price).set_description(description).build()
+    def add_product(self, name, price, date=None, description=None):
+        product = ProductBuilder().set_name(name).set_price(price).set_description(description).set_date(date).build()
         self.cart.add_item(product)
         print(f"Added {product} to the cart.")
 
