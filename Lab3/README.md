@@ -1,8 +1,6 @@
-# The Whispering Wasteland: Behavioral Design Patterns
+# Behavioral Design Patterns
 
-Welcome to *The Whispering Wasteland*, a terminal-based interactive story game that combines strategic survival mechanics with an engaging narrative. This README focuses on the implementation of two behavioral design patterns: **Strategy** and **Command**, which enhance gameplay by enabling dynamic combat strategies and player-driven actions.
-
----
+This project focuses on learning and applying **Behavioral Design Patterns** in the development of a terminal-based interactive story game. The goal was to learn how these patterns, specifically the **Strategy and Command** patterns, can be used to manage complex behaviors and actions in a game. By implementing these patterns, I aimed to enhance the game's flexibility, scalability, and maintainability, while also gaining hands-on experience in applying design patterns to real-world software development scenarios.
 
 ## Project Status
 
